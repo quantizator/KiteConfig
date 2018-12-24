@@ -1,4 +1,4 @@
-server.port: ${GATEWAY_SERVICE_PORT:8762}
+#server.port: ${GATEWAY_SERVICE_PORT:8762}
 
 eureka:
   client:
@@ -17,20 +17,20 @@ eureka:
         context-path: /
 
 
-management:
-  endpoints:
-    web:
-      base-path: /
-      exposure.include: "*"
-  endpoint:
-    health:
-      show-details: ALWAYS
+#management:
+#  endpoints:
+#    web:
+#      base-path: /
+#      exposure.include: "*"
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
 
 spring:
-  cloud:
-    inetutils:
-      preferred-networks:
-        - 10.0
+#  cloud:
+#    inetutils:
+#      preferred-networks:
+#        - 10.0
     gateway:
       discovery.locator.enabled: true
       discovery.locator.lowerCaseServiceId: true
