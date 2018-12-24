@@ -11,7 +11,7 @@ spring.cloud.stream.kafka.streams:
     zkNodes: ${KAFKA_ZK_NODES}
     serde-error: logandcontinue
     configuration:
-      application.server: localhost:${APPLICATIONS_SERVICE_PORT}
+      application.server: localhost:${SERVICE_PORT}
       commit.interval.ms: 200
       schema.registry.url: ${KAFKA_SCHEMA_REGISTRY}
       auto.register.schemas: true

@@ -1,10 +1,9 @@
-spring.application.name: document-types
+spring.application.name: regulations
 
-#server.port: ${DOCUMENTS_SERVICE_PORT}
+#server.port: ${REGULATIONS_SERVICE_PORT}
 
 #endpoints.actuator.enabled: true
-#management.server.port: ${DOCUMENTS_SERVICE_MANAGEMENT_PORT}
-
+#management.server.port: ${REGULATIONS_SERVICE_MANAGEMENT_PORT}
 #management:
 #  endpoints:
 #    web:
@@ -13,25 +12,24 @@ spring.application.name: document-types
 #  endpoint:
 #    health:
 #      show-details: ALWAYS
-
 #management.security.enabled: false
 #management.health.binders.enabled: true
 
-eureka:
-  client:
-    registryFetchIntervalSeconds: 10
-    serviceUrl.defaultZone: ${EUREKA_DEFAULT_ZONE_URL}
-    healthcheck.enabled: true
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-    health-check-url-path: /health
-    preferIpAddress: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    metadata-map:
-      management:
-        port: ${management.server.port}
-        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-        context-path: /
+#eureka:
+#  client:
+#    registryFetchIntervalSeconds: 10
+#    serviceUrl.defaultZone: ${EUREKA_DEFAULT_ZONE_URL}
+#    healthcheck.enabled: true
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10
+#    health-check-url-path: /health
+#    preferIpAddress: true
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+#    metadata-map:
+#      management:
+#        port: ${management.server.port}
+#        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+#        context-path: /
 
 #spring:
 #  cloud:
@@ -40,25 +38,23 @@ eureka:
 #        - 10.0
 #
 #spring.boot.admin:
-#  url: ${ADMIN_URL}
 #  client:
+#    url: ${ADMIN_URL}
 #    period: 10000
 #    instance:
 #      prefer-ip: true
 #      name: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
-info.app.name: Сервис работы с документами (прототип)
-info.app.description: Сервис работы с документами (прототип)
+info.app.name: Сервис работы с регламентами услуг (прототип)
+info.app.description: Сервис работы с регламентами услуг (прототип)
 info.app.version: 1.0.0
 
 # Настройки Cloud Stream для Kafka Streams
-
 #spring.cloud.stream.kafka.binder:
 #  brokers: ${KAFKA_BOOTSTRAP_SERVERS}
 #  autoAddPartitions: true
 #  replicationFactor: 2
 #  minPartitionCount: 2
-#
 #
 #spring.cloud.stream.kafka.streams:
 #  binder:
@@ -66,7 +62,7 @@ info.app.version: 1.0.0
 #    zkNodes: ${KAFKA_ZK_NODES}
 #    serde-error: logandcontinue
 #    configuration:
-#      application.server: localhost:${DOCUMENTS_SERVICE_PORT}
+#      application.server: localhost:${REGULATIONS_SERVICE_PORT}
 #      commit.interval.ms: 200
 #      schema.registry.url: ${KAFKA_SCHEMA_REGISTRY}
 #      auto.register.schemas: true
@@ -154,11 +150,9 @@ info.app.version: 1.0.0
 #      interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
 #
 #spring.cloud.stream.schemaRegistryClient.endpoint: ${KAFKA_SCHEMA_REGISTRY}
-#
 ## Специфичные настройки приложения
 #kite.eventstore:
-#  kafka:
-#    localStore.name: ${STATE_STORE_NAME}
+#  kafka.localStore.name: ${STATE_STORE_NAME}
 #  mongo:
 #    dbAddress: mongodb://${MONGO_SERVER}
 #    database.name: ${MONGO_EVENTS_DB}
@@ -177,3 +171,4 @@ kite.mongo:
 #spring.aop.proxy-target-class: true
 
 spring.jackson.mapper.DEFAULT_VIEW_INCLUSION: true
+

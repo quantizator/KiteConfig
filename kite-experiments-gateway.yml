@@ -27,10 +27,6 @@ eureka:
 #      show-details: ALWAYS
 
 spring:
-#  cloud:
-#    inetutils:
-#      preferred-networks:
-#        - 10.0
     gateway:
       discovery.locator.enabled: true
       discovery.locator.lowerCaseServiceId: true
