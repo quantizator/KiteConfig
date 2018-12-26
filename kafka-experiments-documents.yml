@@ -1,0 +1,8 @@
+spring.application.name: document-types
+
+info.app:
+  name: Сервис работы с документами (прототип)
+  description: Сервис работы с документами (прототип)
+  version: 1.0.0
+
+spring.jackson.mapper.DEFAULT_VIEW_INCLUSION: true

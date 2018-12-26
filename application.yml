@@ -26,5 +26,6 @@ spring.boot.admin:
     instance:
       prefer-ip: true
       name: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+      service-base-url: http://${spring.application.name}:${server.port}
 
 spring.aop.proxy-target-class: true

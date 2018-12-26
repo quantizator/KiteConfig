@@ -1,0 +1,6 @@
+kite.mongo:
+  dbAddress: mongodb://${MONGO_SERVER}
+  database.name: ${MONGO_DB}
+  username: ${MONGO_USER}
+  password: ${MONGO_PASSWORD}
+  authenticationDb: ${MONGO_AUTH_DB}

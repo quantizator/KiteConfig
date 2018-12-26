@@ -1,0 +1,9 @@
+spring.application.name: regulations
+
+info.app:
+  name: Сервис работы с регламентами услуг (прототип)
+  description: Сервис работы с регламентами услуг (прототип)
+  version: 1.0.0
+
+spring.jackson.mapper.DEFAULT_VIEW_INCLUSION: true
+
