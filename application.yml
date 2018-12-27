@@ -31,8 +31,8 @@ spring:
         - 10.0
 
 spring.boot.admin:
+  url: ${ADMIN_URL}
   client:
-    url: ${ADMIN_URL}
     period: 10000
     instance:
       prefer-ip: true
