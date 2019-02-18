@@ -24,11 +24,11 @@ eureka.instance:
       instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
       context-path: /
 
-spring:
-  cloud:
-    inetutils:
-      preferred-networks:
-        - 10.0
+# spring:
+  # cloud:
+    # inetutils:
+      # preferred-networks:
+        # - 10.0
 
 spring.boot.admin:
   url: ${ADMIN_URL}
