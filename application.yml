@@ -1,10 +1,8 @@
 server.port: ${SERVICE_PORT}
-management.server.port: ${SERVICE_MANAGEMENT_PORT}
-
 spring.zipkin.locator.discovery.enabled: true
 
 management:
-  server.port: ${management.server.port}
+  server.port: ${SERVICE_MANAGEMENT_PORT:${SERVICE_PORT}}
   security.enabled: false
   endpoints:
     web:
@@ -15,7 +13,8 @@ management:
       show-details: ALWAYS
   health.binders.enabled: true
 
-kite.application.instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+# kite.application.instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+kite.application.instance-id: ${spring.application.name}
 
 eureka.instance:
   leaseRenewalIntervalInSeconds: 10
@@ -32,7 +31,6 @@ spring:
   cloud:
     inetutils:
       preferred-networks:
-        - 10.0
         - 192.168
         
 # spring:
