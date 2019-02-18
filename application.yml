@@ -15,7 +15,6 @@ management:
 
 kite.application.instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 # kite.application.instance-id: ${spring.application.name}
-
 eureka.client.healthcheck.enabled: true
 
 eureka.instance:
@@ -24,7 +23,7 @@ eureka.instance:
   preferIpAddress: true
   instance-id: ${kite.application.instance-id}
   metadata-map:
-    startup: ${random.int}
+    # startup: ${random.int}
     management:
       port: ${management.server.port}
       instance-id: ${kite.application.instance-id}
