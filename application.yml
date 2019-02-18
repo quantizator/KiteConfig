@@ -13,8 +13,8 @@ management:
       show-details: ALWAYS
   health.binders.enabled: true
 
-# kite.application.instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-kite.application.instance-id: ${spring.application.name}
+kite.application.instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+# kite.application.instance-id: ${spring.application.name}
 
 eureka.instance:
   leaseRenewalIntervalInSeconds: 10
@@ -22,6 +22,7 @@ eureka.instance:
   preferIpAddress: true
   instance-id: ${kite.application.instance-id}
   metadata-map:
+    startup: ${random.int}
     management:
       port: ${management.server.port}
       instance-id: ${kite.application.instance-id}
@@ -31,7 +32,7 @@ spring:
   cloud:
     inetutils:
       preferred-networks:
-        - 192.168
+        - 10.0
         
 # spring:
   # cloud:
