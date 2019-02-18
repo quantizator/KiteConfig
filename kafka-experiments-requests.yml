@@ -12,7 +12,7 @@ kite.rest.documents.service.name: document-types
 
 applications.published.datasource:
   driverClassName: org.postgresql.Driver
-  jdbc-url: jdbc:postgresql://${POSTGRES_SERVER}/requests
+  jdbc-url: jdbc:postgresql://${POSTGRES_SERVER}/${POSTGRES_DATABASE}
   username: ${POSTGRES_USER}
   password: ${POSTGRES_PASSWORD}
   type: com.zaxxer.hikari.HikariDataSource
