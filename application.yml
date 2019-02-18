@@ -1,8 +1,10 @@
 server.port: ${SERVICE_PORT}
+management.server.port: ${SERVICE_MANAGEMENT_PORT}
+
 spring.zipkin.locator.discovery.enabled: true
 
 management:
-  server.port: ${SERVICE_MANAGEMENT_PORT:${SERVICE_PORT}}
+  server.port: ${management.server.port}
   security.enabled: false
   endpoints:
     web:
@@ -30,6 +32,7 @@ spring:
   cloud:
     inetutils:
       preferred-networks:
+        - 10.0
         - 192.168
         
 # spring:
