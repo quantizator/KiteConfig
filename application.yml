@@ -26,29 +26,29 @@ eureka.instance:
       instance-id: ${kite.application.instance-id}
       context-path: /
 
-# spring:
-  # cloud:
-    # inetutils:
-      # preferred-networks:
-        # - 10.0
-        
 spring:
   cloud:
     inetutils:
-      ignored-interfaces:
-        - eth0
-        - eth1
-        - eth2
-        - eth3
-        - lo
+      preferred-networks:
+        - 192.168
+        
+# spring:
+  # cloud:
+    # inetutils:
+      # ignored-interfaces:
+        # - eth0
+        # - eth1
+        # - eth2
+        # - eth3
+        # - lo
 
-spring.boot.admin:
-  url: ${ADMIN_URL}
-  client:
-    period: 10000
-    instance:
+# spring.boot.admin:
+  # url: ${ADMIN_URL}
+  # client:
+    # period: 10000
+    # instance:
       # prefer-ip: true
-      name: ${kite.application.instance-id}
+      # name: ${kite.application.instance-id}
       # service-base-url: http://${spring.application.name}:${server.port}
 
 spring.aop.proxy-target-class: true
