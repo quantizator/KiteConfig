@@ -23,7 +23,7 @@ eureka.instance:
   preferIpAddress: true
   instance-id: ${kite.application.instance-id}
   metadata-map:
-    # startup: ${random.int}
+    startup: ${random.int}
     management:
       port: ${management.server.port}
       instance-id: ${kite.application.instance-id}
