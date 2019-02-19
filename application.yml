@@ -15,7 +15,9 @@ management:
 
 kite.application.instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 # kite.application.instance-id: ${spring.application.name}
-eureka.client.healthcheck.enabled: true
+eureka.client:
+    healthcheck.enabled: true
+    registryFetchIntervalSeconds: 10
 
 eureka.instance:
   leaseRenewalIntervalInSeconds: 10
