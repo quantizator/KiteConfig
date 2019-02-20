@@ -6,7 +6,7 @@ management:
   security.enabled: false
   endpoints:
     web:
-      base-path: /
+      # base-path: /
       exposure.include: "*"
   endpoint:
     health:
@@ -18,11 +18,12 @@ kite.application.instance-id: ${spring.application.name}:${spring.application.in
 eureka.client:
     healthcheck.enabled: true
     fetchRegistry: true
-    registryFetchIntervalSeconds: 10
+    registryFetchIntervalSeconds: 5
 
 eureka.instance:
-  leaseRenewalIntervalInSeconds: 10
-  health-check-url-path: /health
+  leaseRenewalIntervalInSeconds: 5
+  # health-check-url-path: /health
+  health-check-url-path: /actuator/health
   preferIpAddress: true
   instance-id: ${kite.application.instance-id}
   metadata-map:
@@ -30,8 +31,9 @@ eureka.instance:
     management:
       port: ${management.server.port}
       instance-id: ${kite.application.instance-id}
-      context-path: /
-      health.path: /health
+      # context-path: /
+      # health.path: /health
+      health.path: /actuator/health
 
 spring:
   cloud:
