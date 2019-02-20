@@ -33,7 +33,7 @@ eureka.instance:
       instance-id: ${kite.application.instance-id}
       # context-path: /
       # health.path: /health
-      health.path: /actuator/health
+      # health.path: /actuator/health
 
 spring:
   cloud:
