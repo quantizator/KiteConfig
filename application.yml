@@ -17,6 +17,7 @@ kite.application.instance-id: ${spring.application.name}:${spring.application.in
 # kite.application.instance-id: ${spring.application.name}
 eureka.client:
     healthcheck.enabled: true
+    fetchRegistry: true
     registryFetchIntervalSeconds: 10
 
 eureka.instance:
